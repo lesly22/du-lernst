@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Información sobre los verbos HTTP
 // https://developer.mozilla.org/es/docs/Web/HTTP/Methods
 app.use("/", (req, res, next) => {
-  res.send("formulario_prestamo");
+  res.send("Du Lernst");
 });
 
 // Inicializar el servidor en un puerto en específico
