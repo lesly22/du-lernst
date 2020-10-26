@@ -1,0 +1,35 @@
+{
+  "name": "dulernst",
+  "version": "1.0.0",
+  "description": "Proyecto DuLernst",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lesly22/du-lernst.git"
+  },
+  "keywords": [
+    "node",
+    "handlebars",
+    "mongoose",
+    "bootstrap",
+    "MVC"
+  ],
+  "author": "Lesly Mariela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lesly22/du-lernst/issues"
+  },
+  "homepage": "https://github.com/lesly22/du-lernst#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.10.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
