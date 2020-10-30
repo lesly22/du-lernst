@@ -12,3 +12,6 @@ mongoose.connect(process.env.DATABASE, {
 mongoose.connection,on("error", error => {
     console.log(error);
 });
+
+// Importar los modulos requeridos
+require("../models/Usuario");
