@@ -9,7 +9,7 @@ mongoose.connect(process.env.DATABASE, {
 });
 
 // Iniciar la conexion al servidor cloud mongo
-mongoose.connection,on("error", error => {
+mongoose.connection.on("error", error => {
     console.log(error);
 });
 
