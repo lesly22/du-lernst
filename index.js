@@ -1,4 +1,4 @@
-// express
+// Importar express
 const express = require("express");
 // Importar handlebars como template engine
 const exphbs = require("express-handlebars");
