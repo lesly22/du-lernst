@@ -11,12 +11,16 @@ require("dotenv").config({ path: ".env" });
 const app = express();
 
 // Indicar a express utilizar handlebars como template engine
-//app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
+app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 
-//app.set("view engine", "hbs");
+app.set("view engine", "hbs");
 
 // Habilitar body parse para leer los datos del cuerpo de peticiones POST
 //app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res, next) => {
+    res.render("home");
+  });
 
 // Implementar nuestero router
 app.use("/",router());
