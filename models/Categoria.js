@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // Definicion del shema
-const usuarioSchema = new mongoose.Schema({
+const categoriaSchema = new mongoose.Schema({
     categoriaDescripcion: {
         type : String,
         unique: true,
@@ -11,4 +11,4 @@ const usuarioSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("Categoria", usuarioSchema);
+module.exports = mongoose.model("Categorias", categoriaSchema);
