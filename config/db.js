@@ -15,3 +15,5 @@ mongoose.connection.on("error", error => {
 
 // Importar los modulos requeridos
 require("../models/Usuario");
+require("../models/Categoria");
+require("../models/Video");
