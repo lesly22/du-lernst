@@ -1,31 +1,61 @@
-// Importar los modulos requeridos para el funcionamiento del servidor
+// Importar los módulos requeridos para el funcionamiento del servidor
+const mongoose = require("mongoose");
 const express = require("express");
 require("./config/db");
 const exphbs = require("express-handlebars");
 const router = require("./routes/index");
+const bodyParser = require("body-parser");
+const path = require("path");
+const passport = require("./config/passport");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
 
 // Habilitar el archivo de variables de entorno
 require("dotenv").config({ path: ".env" });
 
-// Crear un servidor express
+// Crear un servidor utilizando express
 const app = express();
 
-// Indicar a express utilizar handlebars como template engine
+// Habilitar Handlebars como nuestro template engine
 app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 
 app.set("view engine", "hbs");
 
-// Habilitar body parse para leer los datos del cuerpo de peticiones POST
-//app.use(bodyParser.urlencoded({ extended: true }));
+// Definir ruta para archivos estáticos.
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res, next) => {
-    res.render("home");
-  });
+// Crear la sesión de usuario y la cookie encargada de almacenarla
+app.use(cookieParser('hola'));
 
-// Implementar nuestero router
-app.use("/",router());
+app.use(
+  session({
+    secret: process.env.SECRET,
+    key: process.env.KEY,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
+);
 
-// Inicializar el servidor en un puerto en específico
+// Habilitar passport y la estrategia local
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Habilitar los mensajes flash
+app.use(flash());
+
+// Midleware personalizado para agregar mensajes flash
+app.use((req, res, next) => {
+  res.locals.messages = req.flash();
+  next();
+});
+
+// Habilitar body-parser para obtener el cuerpo de la petición
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Implementar nuestro router
+app.use("/", router());
+
 app.listen(process.env.PORT);
-
-//
