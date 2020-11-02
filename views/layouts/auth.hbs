@@ -1,71 +1,121 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  {{!-- Cargar Bootstrap desde el CDN --}}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  {{!-- Fuentes desde Google Fonts --}}
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  {{!-- Íconos desde Fontawesome --}}
-  <script src="https://kit.fontawesome.com/d7bc68b35c.js" crossorigin="anonymous"></script>
-  {{!-- Estilo personalizado --}}
-  <link href="/css/custom-styles.min.css?v=2.3.1" rel="stylesheet">
-  <title>Bienvenido a Cashize</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{!-- Hoja de estilos Bulma desde el CDN --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+
+  <script defer src="/scripts/carousel.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+
+  <!-- <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script> --> <noscript>You need to enable JavaScript to run this app.</noscript> <div id="root"></div> <script> $(document).ready(function(){ var carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances }); </script> </body> </html>
+  
+  <title>Du Lernst</title>
 </head>
 
-<body class="{{typePage}} full-screen sidebar-collapse">
-  {{!-- Navbar --}}
-  <nav class="navbar navbar-expand-lg bg-white fixed-top nav-down navbar-transparent" color-on-scroll="500">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="/" rel="tooltip" title="Cashize marketplace" data-placement="bottom">
-          Cashize marketplace
+<body>
+  {{!-- Barra de navegación --}}
+  <header>  
+  <nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://i.postimg.cc/SstF0wQS/dulernst-fw.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="https://bulma.io/">
+        Home
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
+          Docs
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-          aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" data-nav-image="../assets/img/blurred-image-1.jpg" data-color="orange">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="btn btn-round btn-danger" href="{{signButtonValue}}">
-              {{signButtonText}}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Síguenos en Twitter" data-placement="bottom"
-              href="https://twitter.com/" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Danos like en Facebook" data-placement="bottom"
-              href="https://www.facebook.com/" target="_blank">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Síguenos en Instagram" data-placement="bottom"
-              href="https://www.instagram.com/" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
+            Overview
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
+            Modifiers
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+            Columns
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+            Layout
+          </a>
+          <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+            Form
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+            Elements
+          </a>
+          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+            Components
+          </a>
+        </div>
       </div>
     </div>
-  </nav>
-  {{!-- Contenido principal --}}
-  {{{body}}}
 
-  {{!-- Scripts requeridos por Bootstrap --}}
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.1/bulma-0.9.1.zip">
+              <span class="icon">
+                <i class="fas fa-download"></i>
+              </span>
+              <span>Download</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  </header>
+
+  {{!-- Contenido principal --}}
+  <main class="flex-shrink-0">
+    <div class="container pt-5">
+      {{{body}}}
+    </div>
+  </main>
+
+  {{!-- Pié de página --}}
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">Du Lernst - 2020</span>
+    </div>
+  </footer>
+
+  <!-- JS, Popper.js, and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -78,3 +128,10 @@
 </body>
 
 </html>
+
+
+<style>
+  body{
+    background-color: #E4FDFF;
+  }
+</style>

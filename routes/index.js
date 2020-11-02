@@ -10,7 +10,7 @@ const router = express.Router();
 module.exports = () => {
   // Rutas disponibles
   router.get("/", (req, res, next) => {
-    res.send("¡Bienvenido a Cashize!");
+    res.send("¡Du lernst!");
   });
 
   // Rutas para usuario
